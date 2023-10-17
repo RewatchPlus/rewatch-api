@@ -1,11 +1,9 @@
-FROM node:20-alpine
+FROM node:20.8.1-alpine3.17@sha256:5ea2089ccb0605b9ac2cfce0841c28963d7f8addf040dd669c2a07fb89f5c90f
 
 WORKDIR /var/www/html/rewatch/api
 
 ARG PNPM_VERSION=8.7.5
 RUN npm --global install pnpm@${PNPM_VERSION}
-
-RUN mkdir -p /var/www/html/app/node_modules
 
 COPY package*.json ./
 COPY pnpm*.json ./
