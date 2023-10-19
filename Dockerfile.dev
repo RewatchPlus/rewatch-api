@@ -10,8 +10,6 @@ COPY pnpm*.json ./
 
 RUN pnpm install
 
-USER node
-
 EXPOSE 3001
 
 CMD [ "pnpm", "start:dev" ]
